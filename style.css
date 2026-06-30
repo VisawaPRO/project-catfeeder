@@ -1,0 +1,733 @@
+/* =========================================
+   CAT FEEDER DASHBOARD
+   style.css (Part 1)
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#0f172a;
+    --bg2:#111827;
+
+    --card:rgba(255,255,255,.08);
+
+    --border:rgba(255,255,255,.08);
+
+    --primary:#3b82f6;
+    --primary2:#2563eb;
+
+    --green:#22c55e;
+    --red:#ef4444;
+    --yellow:#f59e0b;
+
+    --text:#ffffff;
+    --sub:#94a3b8;
+
+    --shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #111827
+    );
+
+    color:white;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+/* ============================= */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+    background:
+
+    radial-gradient(circle at top left,#2563eb55,transparent 30%),
+
+    radial-gradient(circle at bottom right,#0ea5e955,transparent 35%),
+
+    radial-gradient(circle at center,#1e293b,transparent 70%);
+
+}
+
+/* ============================= */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:30px;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+/* ============================= */
+
+.title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.title i{
+
+    font-size:45px;
+
+    color:#60a5fa;
+
+}
+
+.title h1{
+
+    font-size:30px;
+
+    letter-spacing:2px;
+
+}
+
+.title span{
+
+    color:var(--sub);
+
+    font-size:14px;
+
+}
+
+/* ============================= */
+
+.status{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.status-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    background:var(--card);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    animation:pulse 1.5s infinite;
+
+}
+
+/* ============================= */
+
+main{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(340px,1fr));
+
+    gap:22px;
+
+    padding:25px;
+
+}
+
+/* ============================= */
+
+.card{
+
+    background:var(--card);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#3b82f6;
+
+    box-shadow:
+
+    0 15px 40px rgba(59,130,246,.25);
+
+}
+
+.card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+}
+
+.card h2 i{
+
+    color:#60a5fa;
+
+}
+
+/* ============================= */
+/* CAMERA */
+/* ============================= */
+
+.camera{
+
+    grid-column:span 2;
+
+}
+
+.camera-box{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:#000;
+
+    border:2px solid rgba(255,255,255,.08);
+
+}
+
+.camera-box img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ============================= */
+
+.value{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+/* ============================= */
+
+button{
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+/* ============================= */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+box-shadow:0 0 0 0 rgba(34,197,94,.7);
+
+}
+
+70%{
+
+transform:scale(1.2);
+
+box-shadow:0 0 0 14px rgba(34,197,94,0);
+
+}
+
+100%{
+
+transform:scale(1);
+
+box-shadow:0 0 0 0 rgba(34,197,94,0);
+
+}
+
+}
+
+/* ============================= */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#3b82f6;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111827;
+
+}
+
+/* ============================= */
+
+@media(max-width:900px){
+
+.camera{
+
+grid-column:span 1;
+
+}
+
+header{
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+.title{
+
+justify-content:center;
+
+}
+
+.status{
+
+justify-content:center;
+
+}
+
+}
+
+/* =========================================
+   style.css (Part 2)
+   Feed • Water • Schedule • System
+=========================================*/
+
+/* ---------- Feed Button ---------- */
+
+.feed-btn{
+    width:100%;
+    height:60px;
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+    color:#fff;
+    font-size:20px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+}
+
+.feed-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(37,99,235,.45);
+}
+
+.feed-btn:active{
+    transform:scale(.98);
+}
+
+/* ---------- Auto Switch ---------- */
+
+.mode-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
+}
+
+.switch{
+    position:relative;
+    width:70px;
+    height:36px;
+}
+
+.switch input{
+    display:none;
+}
+
+.slider{
+    position:absolute;
+    inset:0;
+    background:#475569;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.slider:before{
+    content:"";
+    position:absolute;
+    width:28px;
+    height:28px;
+    left:4px;
+    top:4px;
+    background:white;
+    border-radius:50%;
+    transition:.3s;
+}
+
+input:checked+.slider{
+    background:#22c55e;
+}
+
+input:checked+.slider:before{
+    transform:translateX(34px);
+}
+
+/* ---------- Water ---------- */
+
+.water-container{
+    margin-top:15px;
+}
+
+.water-bar{
+    width:100%;
+    height:26px;
+    border-radius:50px;
+    background:#1e293b;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.water-fill{
+    width:70%;
+    height:100%;
+    background:linear-gradient(90deg,#06b6d4,#3b82f6);
+    transition:.5s;
+}
+
+.water-text{
+    text-align:center;
+    margin-top:12px;
+    font-size:26px;
+    font-weight:bold;
+}
+
+/* ---------- Schedule ---------- */
+
+.schedule-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:15px;
+}
+
+.schedule-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 16px;
+    background:rgba(255,255,255,.05);
+    border-radius:15px;
+    transition:.25s;
+}
+
+.schedule-item:hover{
+    background:rgba(59,130,246,.15);
+}
+
+.schedule-time{
+    font-size:20px;
+    font-weight:600;
+}
+
+.schedule-delete{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:12px;
+    background:#ef4444;
+    color:white;
+    font-size:18px;
+}
+
+.add-time{
+    width:100%;
+    margin-top:18px;
+    height:48px;
+    border:none;
+    border-radius:15px;
+    background:#22c55e;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+}
+
+.add-time:hover{
+    background:#16a34a;
+}
+
+/* ---------- Status ---------- */
+
+.system-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.system-box{
+    background:rgba(255,255,255,.05);
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+    transition:.25s;
+}
+
+.system-box:hover{
+    background:rgba(59,130,246,.15);
+}
+
+.system-box h3{
+    font-size:14px;
+    color:#94a3b8;
+    margin-bottom:10px;
+}
+
+.system-box span{
+    font-size:24px;
+    font-weight:700;
+}
+
+/* ---------- Log ---------- */
+
+.log-box{
+    margin-top:15px;
+    max-height:250px;
+    overflow:auto;
+}
+
+.log-item{
+    padding:10px;
+    border-bottom:1px solid rgba(255,255,255,.05);
+    color:#cbd5e1;
+    font-size:15px;
+}
+
+.log-item:last-child{
+    border:none;
+}
+
+/* ---------- Toast ---------- */
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#1e293b;
+    border-left:5px solid #22c55e;
+    padding:18px 25px;
+    border-radius:15px;
+    color:white;
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+    transform:translateY(120px);
+    opacity:0;
+    transition:.4s;
+    z-index:9999;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* ---------- Input ---------- */
+
+input[type="time"]{
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:15px;
+    background:#1e293b;
+    color:white;
+    padding:0 15px;
+    margin-top:10px;
+    font-size:17px;
+}
+
+select{
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:15px;
+    background:#1e293b;
+    color:white;
+    padding:0 15px;
+    font-size:16px;
+}
+
+/* ---------- Badge ---------- */
+
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:50px;
+    font-size:13px;
+    background:#22c55e;
+}
+
+.badge.red{
+    background:#ef4444;
+}
+
+.badge.orange{
+    background:#f59e0b;
+}
+
+/* ---------- Loader ---------- */
+
+.loader{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:4px solid rgba(255,255,255,.15);
+    border-top-color:#3b82f6;
+    animation:spin 1s linear infinite;
+    margin:auto;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* ---------- Fade ---------- */
+
+.fade{
+    animation:fade .4s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+    main{
+        grid-template-columns:1fr;
+        padding:18px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .system-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feed-btn{
+        font-size:18px;
+    }
+
+    .schedule-time{
+        font-size:18px;
+    }
+
+    .water-text{
+        font-size:22px;
+    }
+
+    .title h1{
+        font-size:24px;
+    }
+
+}
+
+/* ---------- End ---------- */

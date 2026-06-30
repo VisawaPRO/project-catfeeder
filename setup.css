@@ -1,0 +1,59 @@
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    width:90%;
+    max-width:400px;
+    background:#111827;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+h1{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    background:#1f2937;
+    color:white;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    background:#3b82f6;
+    color:white;
+    font-size:16px;
+}
+
+#list{
+    margin-top:10px;
+    max-height:150px;
+    overflow:auto;
+}
+
+.wifi-item{
+    padding:8px;
+    margin:5px 0;
+    background:#1f2937;
+    border-radius:8px;
+    cursor:pointer;
+}

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Cat Feeder Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<header>
+
+    <div class="title">
+
+        <i class="fa-solid fa-cat"></i>
+
+        <div>
+
+            <h1>CAT FEEDER</h1>
+
+            <span>Smart Pet Feeding System</span>
+
+        </div>
+
+    </div>
+
+    <div class="status">
+
+        <div class="status-item online">
+
+            <span class="dot"></span>
+
+            ONLINE
+
+        </div>
+
+        <div class="status-item">
+
+            <i class="fa-solid fa-wifi"></i>
+
+            WiFi
+
+        </div>
+
+        <div class="status-item">
+
+            <i class="fa-solid fa-cloud"></i>
+
+            MQTT
+
+        </div>
+
+    </div>
+
+</header>
+
+<main>
+
+<section class="card camera">
+
+<h2>
+
+<i class="fa-solid fa-camera"></i>
+
+Live Camera
+
+</h2>
+
+<div class="camera-box">
+
+<img id="camera"
+
+src="/stream"
+
+alt="Camera Stream">
+
+</div>
+
+</section>
+
+<section class="card water">
+
+<h2>
+
+<i class="fa-solid fa-droplet"></i>
+
+Water Level
+
+</h2>
+
+<div class="progress">
+
+<div id="waterBar"
+
+class="progress-fill"
+
+style="width:72%"></div>
+
+</div>
+
+<div class="value">
+
+<span id="waterValue">
+
+72%
+
+</span>
+
+</div>
+
+</section>
+
+<section class="card feed">
+
+<h2>
+
+<i class="fa-solid fa-bowl-food"></i>
+
+Feed Control
+
+</h2>
+
+<div class="mode">
+
+<button id="manualBtn"
+
+class="mode-btn active">
+
+Manual
+
+</button>
+
+<button id="autoBtn"
+
+class="mode-btn">
+
+Auto
+
+</button>
+
+</div>
+
+<button id="feedBtn"
+
+class="feed-button">
+
+<i class="fa-solid fa-paw"></i>
+
+FEED NOW
+
+</button>
+
+</section>
+
+<section class="card schedule">
+
+<h2>
+
+<i class="fa-solid fa-clock"></i>
+
+Schedule
+
+</h2>
+
+<div id="scheduleList">
+
+<div class="schedule-item">
+
+<input type="time"
+
+value="08:00">
+
+<button>
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+<div class="schedule-item">
+
+<input type="time"
+
+value="12:00">
+
+<button>
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+<div class="schedule-item">
+
+<input type="time"
+
+value="18:00">
+
+<button>
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<button id="addSchedule"
+
+class="add-btn">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Time
+
+</button>
+
+</section>
+
+<section class="card motor">
+
+<h2>
+
+<i class="fa-solid fa-gear"></i>
+
+Motor Status
+
+</h2>
+
+<div class="motor-status">
+
+<div class="motor-circle stop"
+
+id="motorCircle">
+
+</div>
+
+<div>
+
+<h3 id="motorText">
+
+STOP
+
+</h3>
+
+<p>
+
+Waiting...
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card system">
+
+<h2>
+
+<i class="fa-solid fa-microchip"></i>
+
+System
+
+</h2>
+
+<div class="system-grid">
+
+<div>
+
+CPU
+
+<span id="cpuTemp">
+
+38°C
+
+</span>
+
+</div>
+
+<div>
+
+RAM
+
+<span id="ram">
+
+52%
+
+</span>
+
+</div>
+
+<div>
+
+Uptime
+
+<span id="uptime">
+
+00:00:00
+
+</span>
+
+</div>
+
+<div>
+
+IP
+
+<span id="ip">
+
+192.168.1.50
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card log">
+
+<h2>
+
+<i class="fa-solid fa-list"></i>
+
+Activity
+
+</h2>
+
+<div id="logBox">
+
+<div>
+
+08:00 Feed Completed
+
+</div>
+
+<div>
+
+12:00 Feed Completed
+
+</div>
+
+<div>
+
+Water 72%
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<div id="toast"
+
+class="toast">
+
+Done
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

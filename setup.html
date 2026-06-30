@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cat Feeder Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="setup.css">
+</head>
+
+<body>
+
+<div class="box">
+
+  <h1>🐱 Cat Feeder Setup</h1>
+
+  <p>Connect WiFi to continue</p>
+
+  <button onclick="scanWiFi()">Scan WiFi</button>
+
+  <div id="list"></div>
+
+  <input id="ssid" placeholder="WiFi Name">
+  <input id="pass" type="password" placeholder="Password">
+
+  <button onclick="save()">Connect</button>
+
+  <div id="status"></div>
+
+</div>
+
+<script src="setup.js"></script>
+
+</body>
+</html>
